@@ -1,0 +1,38 @@
+{
+  "name": "rututils",
+  "version": "1.0.0",
+  "description": "rutUtils description.",
+  "main": "index.js",
+  "repository": {
+    "url": "git@github.com:sebmaldo/rutUtils.git",
+    "type": "git"
+  },
+  "engines": {
+    "node": ">=7.0.0"
+  },
+  "scripts": {
+    "lint": "node_modules/.bin/gulp lint",
+    "doc": "node_modules/.bin/gulp doc",
+    "test": "node_modules/.bin/nyc node --harmony_async_await node_modules/.bin/ava",
+    "test:watch": "node --harmony_async_await node_modules/.bin/ava --watch"
+  },
+  "ava": {
+    "verbose": true
+  },
+  "author": "Becual <tecnologia@becual.com>",
+  "license": "WTFPL",
+  "devDependencies": {
+    "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-jsdoc3": "^1.0.1",
+    "gulp-open": "^2.0.0",
+    "jsdoc-strip-async-await": "^0.1.0",
+    "minami": "^1.1.1",
+    "ava": "^0.17.0",
+    "nyc": "^10.0.0"
+  },
+  "dependencies": {
+    "ramda": "^0.23.0"
+  }
+}

@@ -1,0 +1,9 @@
+{
+	"opts": {
+		"destination": "./docs/",
+		"encoding": "utf8",
+		"recurse": true,
+		"template": "./node_modules/minami"
+	},
+	"plugins": ["node_modules/jsdoc-strip-async-await"]
+}
