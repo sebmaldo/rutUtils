@@ -11,7 +11,7 @@ test('Debe validar ruts tecnologia funcional', t => {
 test('Debe validar rut generados funcional', t => {
     t.is(validarRut('119649692'), true);
     t.is(validarRut('220405818'), true);
-    t.is(validarRut('8523482k'), true);
+    t.is(validarRut('8523482K'), true);
     t.is(validarRut('7215763k'), true);
     t.is(validarRut('152221143'), false);
     t.is(validarRut('244582834'), true);
