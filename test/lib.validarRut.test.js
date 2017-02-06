@@ -2,13 +2,13 @@ import test from 'ava';
 import validarRut from '../lib/validarRut';
 
 
-test('Debe validar ruts con formato funcional', t => {
+test('Debe validar ruts con formato', t => {
     t.is(validarRut('15.068.143-k'), true);
     t.is(validarRut('17.287.369-3'), true);
     t.is(validarRut('17.692.128-3'), false);
 });
 
-test('Debe validar rut generados funcional', t => {
+test('Debe validar rut generados', t => {
     t.is(validarRut('119649692'), true);
     t.is(validarRut('220405818'), true);
     t.is(validarRut('8523482K'), true);

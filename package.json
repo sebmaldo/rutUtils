@@ -2,7 +2,7 @@
   "name": "rututils",
   "version": "1.0.0",
   "description": "rutUtils description.",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "repository": {
     "url": "git@github.com:sebmaldo/rutUtils.git",
     "type": "git"
