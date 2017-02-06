@@ -15,3 +15,9 @@ test('Debe retornar to `1`', t => {
     let result = rf('1');
     t.is(result, '1');
 });
+
+
+test('Debe retornar to `15.068-1`', t => {
+    let result = rf('15.068.1-');
+    t.is(result, '15.068-1');
+});
