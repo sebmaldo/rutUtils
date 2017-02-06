@@ -16,3 +16,8 @@ test('Return must be equal to `9.457.904-K`', t => {
     t.is(result, '9.457.904-K');
 
 });
+
+test('Return must be equal to `1`', t => {
+    let result = rutFormatter.formatRUT('1');
+    t.is(result, '1');
+});
