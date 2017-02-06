@@ -9,7 +9,7 @@ import * as R from 'ramda';
  */
 
 
-export const limpiarYObtenerCabecera = (rut) => R.pipe(
-    <any>(R.take(R.length(rut)-1)),
+export const limpiarYObtenerCabecera = (rut: any) => R.pipe(
+    (R.take(R.length(rut) - 1)),
     <any>(R.replace(/\.|-/g, ''))
     )(rut);

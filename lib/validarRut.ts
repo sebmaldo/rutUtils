@@ -11,16 +11,16 @@ import {limpiarYObtenerCabecera} from './limpiarYObtenerCabecera';
  * @param {number} rut - Parte numérica del rut a ser calculado el dígito.
  * @returns {string} - Retorna el dígito verificador a ser utilizado.
  */
-let dvRecursivo = R.curry((acum, mult, rut) => {
+let dvRecursivo = R.curry((acum: number, mult: number, rut: number) => {
     /**
      * Función que retorna el acumulador menos uno si no es cero y k en caso de ser cero.
      *
      * @param {number} a - Acumulador para obtener dígito verificador.
      * @return {string} - retorna un string con el dígito verificador.
      */
-    let dv = (a) => (a ? R.toString(R.dec(a)) : 'K');
+    let dv = (a: number) => (a ? R.toString(R.dec(a)) : 'K');
     return rut ?
-        dvRecursivo((acum+rut%10*(9-mult%6))%11, mult+1, Math.floor(rut/10)) :
+        dvRecursivo((acum + rut % 10 * (9 - mult % 6)) % 11, mult + 1, Math.floor(rut / 10)) :
         dv(acum);
 });
 
@@ -32,8 +32,8 @@ let dvRecursivo = R.curry((acum, mult, rut) => {
  * @returns {string} - Dígito verificador que corresponde según el rut.
  */
 let obtenerDv = R.pipe(
-        <any>limpiarYObtenerCabecera,
-        <any>dvRecursivo(1, 0)
+        limpiarYObtenerCabecera,
+        dvRecursivo(1, 0)
     );
 
 /**
@@ -42,9 +42,8 @@ let obtenerDv = R.pipe(
  * @param {string} rut - Rut a ser revisado.
  * @returns {boolean} - True o False que indíca si el rut es válido.
  */
-export const validarRut = (rut) => {
+export const validarRut = (rut: string) => {
     return rut ?
-        R.equals(R.toUpper(<string>R.last(<string>rut)), <string>obtenerDv(rut)) :
+        R.equals(R.toUpper(R.last(rut)), obtenerDv(rut)) :
         false;
 };
-

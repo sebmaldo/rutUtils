@@ -1,7 +1,7 @@
 import {formatoRut} from './formatoRut';
 import {validarRut} from './validarRut';
 
-export default {
+export = {
     formatoRut: formatoRut,
     validarRut: validarRut
 };
