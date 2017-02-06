@@ -20,3 +20,10 @@ test('Debe validar rut generados', t => {
     t.is(validarRut('158606676'), false);
     t.is(validarRut('244572944'), true);
 });
+
+test('Undefined y vacío debe ser false', t => {
+    t.is(validarRut(undefined), false);
+    t.is(validarRut(null), false);
+    t.is(validarRut(NaN), false);
+    t.is(validarRut(''), false);
+});
