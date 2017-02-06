@@ -2,7 +2,7 @@
   "name": "rututils",
   "version": "1.0.3",
   "description": "rutUtils description.",
-  "main": "./lib/index.js",
+  "main": "./build/index.js",
   "repository": {
     "url": "git@github.com:sebmaldo/rutUtils.git",
     "type": "git"
@@ -22,15 +22,21 @@
   "author": "Becual <tecnologia@becual.com>",
   "license": "WTFPL",
   "devDependencies": {
+    "@types/node": "^7.0.5",
+    "@types/ramda": "0.0.3",
+    "ava": "^0.17.0",
     "gulp": "git+https://git@github.com/gulpjs/gulp.git#4.0",
     "gulp-eslint": "^3.0.1",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-jsdoc3": "^1.0.1",
     "gulp-open": "^2.0.0",
+    "gulp-tslint": "^7.1.0",
+    "gulp-typescript": "^3.1.4",
     "jsdoc-strip-async-await": "^0.1.0",
     "minami": "^1.1.1",
-    "ava": "^0.17.0",
-    "nyc": "^10.0.0"
+    "nyc": "^10.0.0",
+    "tslint": "^4.4.2",
+    "typescript": "^2.1.5"
   },
   "dependencies": {
     "ramda": "^0.23.0"

@@ -1,6 +1,5 @@
 import test from 'ava';
-import validarRut from '../lib/validarRut';
-
+import {validarRut} from '../build/validarRut';
 
 test('Debe validar ruts con formato', t => {
     t.is(validarRut('15.068.143-k'), true);

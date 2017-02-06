@@ -1,5 +1,5 @@
-const R = require('ramda');
-const lyc = require('./limpiarYObtenerCabecera');
+import * as  R from 'ramda';
+import {limpiarYObtenerCabecera} from './limpiarYObtenerCabecera';
 
 /**
  * Función recursiva para obtener dígito verificador, recibe un acumulador para
@@ -32,8 +32,8 @@ let dvRecursivo = R.curry((acum, mult, rut) => {
  * @returns {string} - Dígito verificador que corresponde según el rut.
  */
 let obtenerDv = R.pipe(
-        lyc,
-        dvRecursivo(1, 0)
+        <any>limpiarYObtenerCabecera,
+        <any>dvRecursivo(1, 0)
     );
 
 /**
@@ -42,9 +42,9 @@ let obtenerDv = R.pipe(
  * @param {string} rut - Rut a ser revisado.
  * @returns {boolean} - True o False que indíca si el rut es válido.
  */
-module.exports = (rut) => {
+export const validarRut = (rut) => {
     return rut ?
-        R.equals(R.toUpper(R.last(rut)), obtenerDv(rut)) :
+        R.equals(R.toUpper(<string>R.last(<string>rut)), <string>obtenerDv(rut)) :
         false;
 };
 

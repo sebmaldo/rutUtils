@@ -1,19 +1,21 @@
 const gulp             = require('gulp');
-const eslint           = require('gulp-eslint');
+//const eslint           = require('gulp-eslint');
 const jsdoc            = require('gulp-jsdoc3');
-const excludeGitignore = require('gulp-exclude-gitignore');
+//const excludeGitignore = require('gulp-exclude-gitignore');
 const open             = require('gulp-open');
+const ts   = require('gulp-typescript');
+const lint = require('gulp-tslint');
 
 /**
  * Check the source code quality based  in the rules defined
  * in .eslitrc file
  */
 gulp.task('lint', () => {
-    return gulp.src(['**/*.js', '!node_modules/**', '!docs/**'])
-        .pipe(excludeGitignore())
-        .pipe(eslint())
-        .pipe(eslint.format())
-        .pipe(eslint.failAfterError());
+    return gulp.src('./lib/**/*.ts')
+    .pipe(lint({
+        formater : 'verbose'
+    }))
+    .pipe(lint.report());
 });
 
 
@@ -44,3 +46,23 @@ gulp.task('open-doc', () => {
 gulp.task('doc', gulp.series('generate-doc', 'open-doc'));
 
 gulp.task('default', gulp.series('lint'));
+
+const tsProject = ts.createProject('tsconfig.json');
+
+/**
+ * Build ts files into js files
+ */
+
+gulp.task('build', () => {
+    let tsResult = gulp.src('lib/**/*.ts')
+      .pipe(tsProject());
+
+    return tsResult.js.pipe(gulp.dest('build'));
+});
+
+/**
+ * Recompile ts files when change something
+ */
+gulp.task('build:watch', gulp.series('build', () => {
+    return gulp.watch('lib/**/*.ts', gulp.series('build'));
+}));

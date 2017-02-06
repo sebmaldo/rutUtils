@@ -1,5 +1,5 @@
 import test from 'ava';
-import rutUtils from '../lib/index';
+import rutUtils from '../build/index';
 
 test('Debe validar el rut 15.068.143-K', t => {
     let respose = rutUtils.validarRut('15.068.143-K');
