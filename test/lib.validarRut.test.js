@@ -2,7 +2,7 @@ import test from 'ava';
 import validarRut from '../lib/validarRut';
 
 
-test('Debe validar ruts tecnologia funcional', t => {
+test('Debe validar ruts con formato funcional', t => {
     t.is(validarRut('15.068.143-k'), true);
     t.is(validarRut('17.287.369-3'), true);
     t.is(validarRut('17.692.128-3'), false);
