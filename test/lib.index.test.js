@@ -30,3 +30,12 @@ test('Debe formatear rut 681435 a 68.143-5', t => {
     let respose = rutUtils.formatoRut('681435');
     t.is(respose, '68.143-5');
 });
+
+test('Debe entregar digito verificador de 15068143 como K', t => {
+    let response = rutUtils.obtenerDigitoVerificador('15.068.143');
+    t.is(response, 'K');
+    response = rutUtils.obtenerDigitoVerificador('15068143');
+    t.is(response, 'K');
+    response = rutUtils.obtenerDigitoVerificador(15068143);
+    t.is(response, 'K');
+});

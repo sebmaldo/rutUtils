@@ -1,6 +1,5 @@
 "use strict";
 var R = require("ramda");
-var limpiarYObtenerCabecera_1 = require("./limpiarYObtenerCabecera");
 /**
  * Función recursive que retorma un número con separador de miles, pero
  * invertido, es decir, desde 4444 retorna 444.4
@@ -23,7 +22,7 @@ var milInv = function (rut) {
  * @returns {string} - String con el rut en formato XX.XXX.XXX-X
  */
 exports.formatoRut = function (rut) {
-    var formater = R.pipe(limpiarYObtenerCabecera_1.limpiarYObtenerCabecera, R.reverse, milInv, R.reverse);
+    var formater = R.pipe(R.init, R.reverse, milInv, R.reverse);
     var formatPipe = R.pipe(R.replace(/\.|-/g, ''), (function (r) { return 1 < R.length(r) ? R.toUpper(formater(r) + "-" + R.last(r)) : r; }));
     return formatPipe(rut);
 };

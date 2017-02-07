@@ -1,7 +1,9 @@
 import {formatoRut} from './formatoRut';
 import {validarRut} from './validarRut';
+import {obtenerDigitoVerificador} from './obtenerDigitoVerificador';
 
 export = {
     formatoRut: formatoRut,
-    validarRut: validarRut
+    validarRut: validarRut,
+    obtenerDigitoVerificador: obtenerDigitoVerificador
 };
