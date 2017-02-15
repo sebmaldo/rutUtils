@@ -39,3 +39,6 @@ jspm_packages
 .idea
 .DS_Store
 yarn-error.log
+
+# Gemfury
+.npmrc
