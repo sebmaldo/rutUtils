@@ -1,4 +1,4 @@
-import * as  R from 'ramda';
+import * as R from 'ramda';
 
 /**
  * Función recursive que retorma un número con separador de miles, pero
@@ -7,7 +7,7 @@ import * as  R from 'ramda';
  * @param {string} rut - String para dar formato de miles invertido.
  * @return {string} - String con separador de miles invertido.
  */
-let milInv = (rut: string) => {
+let milInv = (rut: string): string => {
     return 3 < R.length(<any>rut) ?
         `${R.take(3, rut)}.${milInv(R.takeLast(R.length(<any>rut) - 3, rut))}` :
         rut;
@@ -22,17 +22,18 @@ let milInv = (rut: string) => {
  * @param {string} rut - Rut para ser formateado
  * @returns {string} - String con el rut en formato XX.XXX.XXX-X
  */
-export const formatoRut = (rut: string) => {
+export const formatoRut = (rut: string): string => {
+
     let formater = R.pipe(
-            R.init,
-            <any>R.reverse,
-            milInv,
-            R.reverse
-        );
+        R.init,
+        <any>R.reverse,
+        milInv,
+        <any>R.reverse
+    );
 
     let formatPipe = R.pipe(
-            R.replace(/\.|-/g, ''),
-            ((r: any) => 1 < R.length(r) ? R.toUpper(`${formater(r)}-${R.last(r)}`) : r));
+        R.replace(/\.|-| /g, ''),
+        ((r: any) => 1 < R.length(r) ? R.toUpper(`${formater(r)}-${R.last(r)}`) : r));
 
     return formatPipe(<string>rut);
 };

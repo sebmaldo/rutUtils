@@ -1,6 +1,6 @@
 {
   "name": "@becual/rututils",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "rutUtils description.",
   "main": "./build/index.js",
   "repository": {
@@ -14,7 +14,7 @@
     "lint": "node_modules/.bin/gulp lint",
     "doc": "node_modules/.bin/gulp doc",
     "test": "node_modules/.bin/nyc node --harmony_async_await node_modules/.bin/ava",
-    "test:watch": "node --harmony_async_await node_modules/.bin/ava --watch"
+    "test:watch": "node node_modules/.bin/ava --watch"
   },
   "ava": {
     "verbose": true

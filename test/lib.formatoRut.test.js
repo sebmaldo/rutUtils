@@ -1,5 +1,5 @@
 import test from 'ava';
-import {formatoRut} from '../build/formatoRut';
+import { formatoRut } from '../build/formatoRut';
 
 test('Debe retornar `15.649.137-3`', t => {
     let result = formatoRut('156491373');

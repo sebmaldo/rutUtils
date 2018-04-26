@@ -1,5 +1,5 @@
-import * as  R from 'ramda';
-import {obtenerDigitoVerificador} from './obtenerDigitoVerificador';
+import * as R from 'ramda';
+import { obtenerDigitoVerificador } from './obtenerDigitoVerificador';
 
 
 /**
@@ -8,7 +8,7 @@ import {obtenerDigitoVerificador} from './obtenerDigitoVerificador';
  * @param {string} rut - Rut a ser revisado.
  * @returns {boolean} - True o False que indíca si el rut es válido.
  */
-export const validarRut = (rut: string) => {
+export const validarRut = (rut: string): boolean => {
     return rut ?
         R.equals(R.toUpper(R.last(rut)), obtenerDigitoVerificador(R.init(rut))) :
         false;

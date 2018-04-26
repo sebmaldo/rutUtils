@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var R = require("ramda");
 /**
  * Función recursive que retorma un número con separador de miles, pero
@@ -23,6 +24,6 @@ var milInv = function (rut) {
  */
 exports.formatoRut = function (rut) {
     var formater = R.pipe(R.init, R.reverse, milInv, R.reverse);
-    var formatPipe = R.pipe(R.replace(/\.|-/g, ''), (function (r) { return 1 < R.length(r) ? R.toUpper(formater(r) + "-" + R.last(r)) : r; }));
+    var formatPipe = R.pipe(R.replace(/\.|-| /g, ''), (function (r) { return 1 < R.length(r) ? R.toUpper(formater(r) + "-" + R.last(r)) : r; }));
     return formatPipe(rut);
 };

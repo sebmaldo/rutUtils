@@ -1,4 +1,4 @@
-import * as  R from 'ramda';
+import * as R from 'ramda';
 /**
  * Función recursiva para obtener dígito verificador, recibe un acumulador para
  * ir dejando los resultador parciales, un multiplicador para el cálculo y el
@@ -30,6 +30,6 @@ let dvRecursivo = R.curry((acum: number, mult: number, rut: number) => {
  * @returns {string} - Dígito verificador que corresponde según el rut.
  */
 export const obtenerDigitoVerificador = R.pipe(
-        R.ifElse(R.is(String), R.replace(/\.|-/g, ''), R.identity),
-        dvRecursivo(1, 0)
-    );
+    R.ifElse(R.is(String), R.replace(/\.|-/g, ''), R.identity),
+    dvRecursivo(1, 0)
+);

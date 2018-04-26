@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var R = require("ramda");
 /**
  * Función recursiva para obtener dígito verificador, recibe un acumulador para

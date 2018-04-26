@@ -31,6 +31,16 @@ test('Debe formatear rut 681435 a 68.143-5', t => {
     t.is(respose, '68.143-5');
 });
 
+test('Debe formatear rut " 156491373" a "15.649.137-3"', t => {
+    let respose = rutUtils.formatoRut(' 156491374');
+    t.is(respose, '15.649.137-4');
+});
+
+test('Debe formatear rut " 15.649.137-4" a "15.649.137-4"', t => {
+    let respose = rutUtils.formatoRut(' 15.649.137-4');
+    t.is(respose, '15.649.137-4');
+});
+
 test('Debe entregar digito verificador de 15068143 como K', t => {
     let response = rutUtils.obtenerDigitoVerificador('15.068.143');
     t.is(response, 'K');

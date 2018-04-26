@@ -1,9 +1,10 @@
 import test from 'ava';
-import {validarRut} from '../build/validarRut';
+import { validarRut } from '../build/validarRut';
 
 test('Debe validar ruts con formato', t => {
     t.is(validarRut('15.068.143-k'), true);
     t.is(validarRut('17.287.369-3'), true);
+    t.is(validarRut('15.649.137-3'), true);
     t.is(validarRut('17.692.128-3'), false);
 });
 

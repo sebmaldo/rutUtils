@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var R = require("ramda");
 var obtenerDigitoVerificador_1 = require("./obtenerDigitoVerificador");
 /**
